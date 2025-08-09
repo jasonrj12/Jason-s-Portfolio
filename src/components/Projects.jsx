@@ -10,7 +10,7 @@ const Projects = () => {
       description: 'A modern hospital management system built with React and Node.js, featuring patient management, appointment scheduling, and medical records.',
       image: './public/care compass.jpg',
       link: 'https://github.com/jasonrj12/CareCompass-Hospital-website',
-      tags: ['HTML', 'CSS', 'MYSQL', 'JavaScript', 'PHP'],
+      tags: ['HTML', 'CSS...', 'MYSQL', 'JavaScript', 'PHP'],
       status: 'completed'
     },
     {

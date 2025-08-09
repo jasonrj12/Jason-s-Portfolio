@@ -8,7 +8,7 @@ const Skills = () => {
   const skills = [
     { name: 'HTML', icon: <FaHtml5 className="w-8 h-8" color="#e44d26" /> },
     { name: 'CSS', icon: <FaCss3Alt className="w-8 h-8" color="#264de4" /> },
-    { name: 'JavaScript', icon: <FaJs className="w-8 h-8" color="#f7df1e" /> },
+    { name: 'JavaScript...', icon: <FaJs className="w-8 h-8" color="#f7df1e" /> },
     { name: 'PHP', icon: <FaPhp className="w-8 h-8" color="#777bb3" /> },     
     { name: 'React', icon: <FaReact className="w-8 h-8" color="#61dafb" /> },
     { name: 'MySQL', icon: <SiMysql className="w-8 h-8" color="#4db33d" /> },
