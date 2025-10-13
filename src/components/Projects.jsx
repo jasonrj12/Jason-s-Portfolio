@@ -8,7 +8,7 @@ const Projects = () => {
       title: 'Care Compass HMS',
       subtitle: 'Hospital Management System',
       description: 'A modern hospital management system built with React and Node.js, featuring patient management, appointment scheduling, and medical records.',
-      image: './public/care compass.jpg',
+      image: '/care compass.jpg',
       link: 'https://github.com/jasonrj12/CareCompass-Hospital-website',
       tags: ['HTML', 'CSS...', 'MYSQL', 'JavaScript', 'PHP'],
       status: 'completed'
@@ -17,7 +17,7 @@ const Projects = () => {
       title: 'FitZone Fitness Center',
       subtitle: 'Fitness Management Platform',
       description: 'A full-stack fitness center application with membership management, workout tracking, and trainer scheduling.',
-      image: './public/fitzone.jpg',
+      image: '/fitzone.jpg',
       link: '#',
       tags: ['HTML', 'Tailwind CSS', 'MYSQL', 'JavaScript', 'PHP'],
       status: 'completed'
@@ -26,7 +26,7 @@ const Projects = () => {
       title: 'PillsStation',
       subtitle: 'Pharmacy Management',
       description: 'Comprehensive pharmacy management system with inventory tracking, prescription management, and automated alerts.',
-      image: './public/pill station.jpg',
+      image: '/pill station.jpg',
       link: 'https://github.com/jasonrj12/Pharmacy-website-devolopment',
       tags: ['HTML', 'Tailwind CSS', 'MYSQL', 'JavaScript', 'PHP'],
       status: 'completed'
@@ -35,7 +35,7 @@ const Projects = () => {
       title: 'GreenLife Wellness Center',
       subtitle: 'Wellness & Appointment System',
       description: 'Wellness center website with appointment booking system, service management, and client portal.',
-      image: './public/greenlife wellness.jpg',
+      image: '/greenlife wellness.jpg',
       link: 'https://github.com/jasonrj12/Greenlife-Wellness-Center-Website',
       tags: ['HTML', 'CSS', 'MYSQL', 'JavaScript', 'PHP'],
       status: 'completed'

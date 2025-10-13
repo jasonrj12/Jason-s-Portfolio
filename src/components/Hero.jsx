@@ -82,7 +82,7 @@ const Hero = () => {
         <div className="relative mb-6 sm:mb-8 group">
           <div className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-full border-4 border-white dark:border-zinc-700 shadow-xl overflow-hidden relative">
             <img 
-              src="/jasonrj.jpg" 
+              src="/Google DP.jpg" 
               alt="Renish Jason" 
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               onError={(e) => {
