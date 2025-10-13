@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaFigma, FaPhp } from 'react-icons/fa';
-import { SiMongodb, SiExpress, SiFirebase, SiTailwindcss, SiMysql } from 'react-icons/si';
+import { SiMongodb, SiExpress, SiFirebase, SiTailwindcss, SiMysql, SiCplusplus, SiDotnet, SiSharp } from 'react-icons/si';
 
 const Skills = () => {
   const [hoveredSkill, setHoveredSkill] = useState(null);
@@ -15,6 +15,9 @@ const Skills = () => {
     { name: 'Firebase', icon: <SiFirebase className="w-8 h-8" color="#f58220" /> },
     { name: 'Figma', icon: <FaFigma className="w-8 h-8" color="#a259ff" /> },
     { name: 'Tailwind CSS', icon: <SiTailwindcss className="w-8 h-8" color="#38bdf8" /> },
+    { name: 'C++', icon: <SiCplusplus className="w-8 h-8" color="#00599C" /> },
+    { name: '.NET', icon: <SiDotnet className="w-8 h-8" color="#512BD4" /> },
+    { name: 'C#', icon: <SiSharp className="w-8 h-8" color="#239120" /> },
   ];
 
   return (
