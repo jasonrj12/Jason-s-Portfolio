@@ -23,6 +23,8 @@ const Hero = () => {
   const floatingShapesRef = useRef([]);
   const gradientRef = useRef(null);
   const particlesRef = useRef([]);
+  const [hackedName, setHackedName] = useState('');
+  const [isHacking, setIsHacking] = useState(true);
 
   // Smooth scroll function
   const smoothScrollTo = (targetId) => {
@@ -40,6 +42,38 @@ const Hero = () => {
       });
     }
   };
+
+  // Hacking animation for name
+  useEffect(() => {
+    const targetName = "Renish Jason";
+    const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
+    let iteration = 0;
+    
+    // Set initial random characters
+    setHackedName(targetName.split("").map(char => 
+      char === " " ? " " : chars[Math.floor(Math.random() * chars.length)]
+    ).join(""));
+    
+    const interval = setInterval(() => {
+      setHackedName(targetName.split("").map((char, index) => {
+        if (char === " ") return " ";
+        if (index < iteration) {
+          return targetName[index];
+        }
+        return chars[Math.floor(Math.random() * chars.length)];
+      }).join(""));
+      
+      iteration += 1/3;
+      
+      if (iteration >= targetName.length) {
+        clearInterval(interval);
+        setHackedName(targetName);
+        setIsHacking(false);
+      }
+    }, 50);
+    
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     let timeout;
@@ -266,13 +300,20 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Title - responsive text sizing */}
-        <h1 className="relative z-[1000] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-600 dark:from-blue-400 dark:via-indigo-400 dark:to-cyan-400 leading-tight px-4 py-2 rounded-2xl" style={{ 
-          filter: 'drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3))',
-          backgroundColor: 'rgba(255, 255, 255, 0.05)'
-        }}>
-          Hi, I'm <span className="block sm:inline">Renish Jason</span>
-        </h1>
+        {/* Title - responsive text sizing with hacking animation */}
+          <h1 className="relative z-[1000] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 leading-tight px-4 py-2 rounded-2xl font-mono" style={{ 
+            filter: 'drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3))',
+            backgroundColor: 'rgba(255, 255, 255, 0.05)'
+          }}>
+            <span className="text-cyan-500 dark:text-cyan-400">$</span>{' '}
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-600 dark:from-blue-400 dark:via-indigo-400 dark:to-cyan-400">
+              Hi, I'm{' '}
+            </span>
+            <span className={`block sm:inline relative bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-600 dark:from-blue-400 dark:via-indigo-400 dark:to-cyan-400 ${isHacking ? 'hacking-text' : ''}`} style={isHacking ? { animation: 'glitch 0.3s infinite' } : {}}>
+              {hackedName}
+              {isHacking && <span className="animate-pulse ml-1 text-cyan-400 dark:text-cyan-300">▋</span>}
+            </span>
+          </h1>
 
         {/* Animated subtitle - mobile optimized */}
         <div className="relative z-[1000] min-h-[2rem] sm:min-h-[2.5rem] mb-6 sm:mb-8 w-full max-w-sm sm:max-w-none px-4 py-2 rounded-xl bg-white/10 dark:bg-black/20">
@@ -383,6 +424,25 @@ const Hero = () => {
           }
           100% {
             background-position: 1000px 0;
+          }
+        }
+
+        @keyframes glitch {
+          0%, 100% {
+            text-shadow: 0.05em 0 0 rgba(0, 255, 255, 0.5),
+              -0.05em 0 0 rgba(0, 100, 255, 0.5);
+          }
+          25% {
+            text-shadow: -0.05em 0 0 rgba(0, 255, 255, 0.5),
+              0.05em 0 0 rgba(0, 100, 255, 0.5);
+          }
+          50% {
+            text-shadow: 0.05em 0.05em 0 rgba(0, 255, 255, 0.5),
+              -0.05em -0.05em 0 rgba(0, 100, 255, 0.5);
+          }
+          75% {
+            text-shadow: -0.05em 0.05em 0 rgba(0, 255, 255, 0.5),
+              0.05em -0.05em 0 rgba(0, 100, 255, 0.5);
           }
         }
         
