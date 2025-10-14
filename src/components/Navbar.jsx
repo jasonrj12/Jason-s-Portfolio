@@ -86,7 +86,7 @@ const Navbar = () => {
     <>
       {/* Navbar */}
       <nav className={`
-        fixed top-0 w-full z-50 transition-all duration-500 ease-out
+        fixed top-0 w-full z-[2000] transition-all duration-500 ease-out
         ${scrolled ? 
           'bg-white/90 dark:bg-zinc-900/90 backdrop-blur-xl shadow-lg shadow-black/5 dark:shadow-white/5' : 
           'bg-white/70 dark:bg-zinc-900/70 backdrop-blur-md'
@@ -171,7 +171,7 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         <div className={`
-          md:hidden absolute top-full left-0 w-full transition-all duration-500 ease-out
+          md:hidden absolute top-full left-0 w-full transition-all duration-500 ease-out z-[2001]
           ${menuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'}
         `}>
           <div className="mx-4 mt-2 bg-white/95 dark:bg-zinc-900/95 backdrop-blur-xl rounded-2xl shadow-xl shadow-black/10 dark:shadow-white/10 border border-gray-200/50 dark:border-zinc-700/50 overflow-hidden">
@@ -208,7 +208,7 @@ const Navbar = () => {
       {/* Backdrop for mobile menu */}
       {menuOpen && (
         <div 
-          className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40 md:hidden transition-opacity duration-300"
+          className="fixed inset-0 bg-black/20 backdrop-blur-sm z-[1990] md:hidden transition-opacity duration-300"
           onClick={() => setMenuOpen(false)}
         />
       )}

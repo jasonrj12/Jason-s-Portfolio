@@ -377,7 +377,7 @@ const Hero = () => {
       </div>
 
       {/* Modern Styles */}
-      <style jsx>{`
+      <style>{`
         * {
           box-sizing: border-box;
         }
