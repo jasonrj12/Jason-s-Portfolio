@@ -4,10 +4,10 @@ const Navbar = () => {
   const [hoveredLink, setHoveredLink] = useState(null);
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState('home');
+  const [activeSection, setActiveSection] = useState('hero');
 
   const links = [
-    { href: '#hero', label: 'Home', id: 'home' },
+    { href: '#hero', label: 'Home', id: 'hero' },
     { href: '#about', label: 'About', id: 'about' },
     { href: '#experience', label: 'Experience', id: 'experience' },
     { href: '#skills', label: 'Skills', id: 'skills' },
@@ -19,21 +19,41 @@ const Navbar = () => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
       
-      // Active section detection
+      // Active section detection - find the section that's most visible in viewport
       const sections = links.map(link => link.id);
-      const currentSection = sections.find(section => {
+      let currentSection = null;
+      let maxVisibility = 0;
+      
+      sections.forEach(section => {
         const element = document.getElementById(section);
         if (element) {
           const rect = element.getBoundingClientRect();
-          return rect.top <= 100 && rect.bottom >= 100;
+          const viewportHeight = window.innerHeight;
+          
+          // Calculate how much of the section is visible
+          const visibleTop = Math.max(0, Math.min(rect.bottom, viewportHeight) - Math.max(rect.top, 0));
+          const visibilityRatio = visibleTop / viewportHeight;
+          
+          // Prioritize sections in the top third of the viewport
+          if (rect.top <= viewportHeight / 3 && rect.bottom > 0 && visibilityRatio > maxVisibility) {
+            maxVisibility = visibilityRatio;
+            currentSection = section;
+          }
         }
-        return false;
       });
+      
+      // Fallback to first section if at the very top
+      if (window.scrollY < 100) {
+        currentSection = 'hero';
+      }
       
       if (currentSection) {
         setActiveSection(currentSection);
       }
     };
+    
+    // Initial check
+    handleScroll();
     
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
