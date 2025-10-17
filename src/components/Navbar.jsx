@@ -10,6 +10,7 @@ const Navbar = () => {
     { href: '#hero', label: 'Home', id: 'hero' },
     { href: '#about', label: 'About', id: 'about' },
     { href: '#experience', label: 'Experience', id: 'experience' },
+    { href: '#timeline', label: 'Timeline', id: 'timeline' },
     { href: '#skills', label: 'Skills', id: 'skills' },
     { href: '#projects', label: 'Projects', id: 'projects' },
     { href: '#contact', label: 'Contact', id: 'contact' },
