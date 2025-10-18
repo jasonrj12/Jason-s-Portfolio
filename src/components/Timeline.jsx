@@ -36,7 +36,7 @@ const Timeline = () => {
     {
       id: 4,
       type: 'education',
-      title: 'BSc (Hons) in Information Technology',
+      title: 'BSc (Hons) in Software Engineering',
       organization: 'Cardiff Metropolitan University',
       location: 'United Kingdom',
       period: '2025 – Present',
