@@ -72,35 +72,11 @@ const Navbar = () => {
 
   // Custom Logo Component
   const Logo = ({ className = "" }) => (
-    <svg
-      className={`w-8 h-8 sm:w-10 sm:h-10 ${className}`}
-      viewBox="0 0 40 40"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      {/* Background Circle */}
-      <circle cx="20" cy="20" r="18" fill="url(#logoGradient)" />
-      
-      {/* R Letter */}
-      <path
-        d="M12 12h6c2.5 0 4.5 1.5 4.5 3.5s-1.5 3.5-3.5 3.5l4 8h-3l-3.5-7.5H15V28h-3V12zm3 2.5v5h3c1 0 1.5-.5 1.5-1.5v-2c0-1-.5-1.5-1.5-1.5h-3z"
-        fill="white"
-      />
-      
-      {/* J Letter */}
-      <path
-        d="M24 12h3v12c0 2.5-2 4-4.5 4s-4.5-1.5-4.5-4h3c0 .5.5 1 1 1s1-.5 1-1V12z"
-        fill="white"
-      />
-      
-      {/* Gradient Definition */}
-      <defs>
-        <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#3B82F6" />
-          <stop offset="100%" stopColor="#6366F1" />
-        </linearGradient>
-      </defs>
-    </svg>
+    <img
+      src="/RJ.png"
+      alt="RJ Logo"
+      className={`w-8 h-8 sm:w-10 sm:h-10 object-contain ${className}`}
+    />
   );
 
   return (
